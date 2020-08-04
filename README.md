@@ -1,2 +1,10 @@
 # react-native-platform-diagnostics
 A react-native ES6 module for retrieving some of the more 'quirky' info to provide insight and functionality for handling odd states throughout the platform. (Initial focus: audio)
+
+When working in react-native, due to differences in OS versions, how bluetooth works, how the audio stack works among other things, this library intends to be a toolkit to both retrieve internal states, provide events to monitor system events one wouldn't exactly need to and provide methods for performing not-so-standard operations to work around platform-specific issues.
+
+With this time this will be documented better with method names and example implementations. Initially this library is intended to monitor and provide the state of input/output devices as well as data sources, the ability to use tricks with forcing parts of iOS to re-run some setters without value change to enforce an OS-wide re-establshing/understanding of audio sources and monitoring things such as app focus, what said app has access to, where is it sourcing that audio from (e.g. take a VoIP app that has lost it's datasource to the microphone, you're not diagnosing this without a lot of DIY Obj-C) and whatever debug info/utilities that may not be so obvious, not provided by DeviceInfo or NetInfo (or may even wrap some of these) to give a cross-platform (mobile at least) way to see what is happening under the hood without having to go too close to the metal for the standard ES6/JS developer.
+
+While this is an internal library intended for the Brave Technology Cooperative, issues are open and encouraged for feature requests if you are a developer who has had to write one too many wrappers for very situational and specific information.
+
+This is a MIT-licensed project for the initial stages as we start scaffolding and focusing down the limits of what is and is not provided, as this moves more in to production-worthy library this may be reconsidered but out of good faith, developers shoud expect a potential switch over to an equally permissive license such as AGPL.
